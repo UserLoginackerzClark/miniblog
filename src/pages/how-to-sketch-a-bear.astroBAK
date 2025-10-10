@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="How to Sketch a Bear">
+  <main class="prose mx-auto my-10 text-center text-xl">
+    <h1>How to Sketch a Bear</h1>
+    <p>Start with rough shapes — head, torso, limbs. Then refine the outline and add texture.</p>
+  </main>
+</Layout>
+
