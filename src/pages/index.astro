@@ -1,0 +1,23 @@
+---
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title={SITE_TITLE}
+  description={SITE_DESCRIPTION}
+  className="flex h-svh max-w-sm flex-col justify-center"
+>
+  <main class="space-y-4">
+    <p>
+      Artist of Planet Earth Astro and Tailwind.
+    </p>
+    <p>
+      Concepts heavily inspired by Nature.
+    </p>
+    <p>
+      View artwork <a href="/gallery" class="text-blue-500 underline">Gallery</a>.
+    </p>
+  </main>
+</Layout>
+
