@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout 
+  title="How to Sketch a Bear" 
+  description="Learn how to sketch a bear — a step-by-step guide to capturing anatomy, texture, and movement."
+>
+  <main class="prose mx-auto my-10 text-center">
+    <h1 class="text-3xl font-bold mb-8">How to Sketch a Bear</h1>
+    <p>Step-by-step bear sketching tutorial for artists.</p>
+
+    <img 
+      src="/images/bear-sketch-walk4.webp" 
+      alt="Bear sketch walking" 
+      class="mx-auto my-8 rounded-xl shadow-lg"
+      width="600"
+    />
+
+    <!-- 🐾 Add new image here -->
+    <img 
+      src="/images/Bear-Sketch-Walk1.webp" 
+      alt="Bear sketch alternate pose" 
+      class="mx-auto my-8 rounded-xl shadow-lg"
+      width="600"
+    />
+  </main>
+</Layout>
+
