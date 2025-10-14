@@ -1,23 +1,35 @@
 ---
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout
-  title={SITE_TITLE}
-  description={SITE_DESCRIPTION}
-  className="flex h-svh max-w-sm flex-col justify-center"
->
-  <main class="space-y-4">
-    <p>
-      Artist of Planet Earth Astro and Tailwind.
+<Layout title="Home | sandrogia.com">
+  <main class="px-4 py-10 text-center">
+    <h1 class="text-4xl font-bold mb-4">Sandrogia</h1>
+
+    <!-- Removed the navigation / links section -->
+
+    <p class="text-lg text-gray-700 dark:text-gray-300">
+      Artist of Planet Earth
     </p>
-    <p>
-      Concepts heavily inspired by Nature.
+
+    <p class="mt-2 text-lg text-gray-700 dark:text-gray-300">
+      Concepts heavily inspired by <span class="text-blue-600 dark:text-blue-400 font-semibold">Nature</span>.
     </p>
-    <p>
-      View artwork <a href="/gallery" class="text-blue-500 underline">Gallery</a>.
-    </p>
+
+    <!-- Black Widow Spider Artwork -->
+    <section class="mt-10 text-center">
+      <img
+        src="/images/black-widow-spider-art.webp"
+        alt="Black widow spider artwork illustration"
+        class="mx-auto rounded-2xl shadow-lg"
+        width="600"
+        height="400"
+        loading="lazy"
+      />
+      <p class="mt-3 text-sm text-gray-500 italic">
+        “Black Widow Spider” Insect Artwork
+      </p>
+    </section>
   </main>
 </Layout>
 
