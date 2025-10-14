@@ -1,87 +1,46 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+import bearRoar from "../../images/bear-roar-art.webp";
+import grizzlyFalls from "../../images/grizzly-bear-water-falls-art.webp";
+import polarBear from "../../images/polar-bear-snowy-art.webp";
+import blackWidow from "../../images/black-widow-spider-art.webp";
 ---
 
-<Layout
-  title="Buy Art | sandrogia.com"
-  description="Purchase original wildlife and nature artwork by Sandrogia."
+<Layout 
+  title=" sandrogia.com"
+  description="Paintings are created with Acrylic on Canvas, and include Free delivery."
 >
   <main class="px-4 py-10 text-center">
     <h1 class="text-4xl font-bold mb-6">Buy Art</h1>
 
-    <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
-      To purchase artwork, please contact:
-      <span class="text-blue-600 dark:text-blue-400 font-semibold">
-  art@sandrogia.com
-      </span>
+    <p class="text-lg text-gray-700 dark:text-gray-300">
+      To purchase artwork, email me:  art@sandrogia.com
     </p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <!-- Artwork 1 -->
-      <figure class="rounded-2xl shadow-md overflow-hidden">
-        <img
-          src="/images/bear-roar-art.webp"
-          alt="Bear roaring wildlife art"
-          class="w-full h-auto transition-transform duration-300 hover:scale-105"
-          loading="lazy"
-        />
-        <figcaption class="mt-2 text-sm text-gray-500 italic">
-          “Bear Roar” — Original wildlife art
-        </figcaption>
+    <!-- Artwork Grid -->
+    <section class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center">
+      <figure class="rounded-2xl shadow-lg p-3 bg-white dark:bg-gray-800 transition-transform duration-300 hover:scale-105">
+        <Image src={bearRoar} alt="Bear Roar Original wildlife art" width={400} height={300} />
+        <figcaption class="italic text-sm mt-2">"Bear Roar" - Original wildlife art</figcaption>
       </figure>
 
-      <!-- Artwork 2 -->
-      <figure class="rounded-2xl shadow-md overflow-hidden">
-        <img
-          src="/images/grizzly-bear-water-falls-art.webp"
-          alt="Grizzly bear art by the waterfall"
-          class="w-full h-auto transition-transform duration-300 hover:scale-105"
-          loading="lazy"
-        />
-        <figcaption class="mt-2 text-sm text-gray-500 italic">
-          “Grizzly at the Falls” — Nature-inspired piece
-        </figcaption>
+      <figure class="rounded-2xl shadow-lg p-3 bg-white dark:bg-gray-800 transition-transform duration-300 hover:scale-105">
+        <Image src={grizzlyFalls} alt="Grizzly Falls - Nature inspired piece" width={400} height={300} />
+        <figcaption class="italic text-sm mt-2">"Grizzly Falls" - Nature inspired</figcaption>
       </figure>
 
-      <!-- Artwork 3 -->
-      <figure class="rounded-2xl shadow-md overflow-hidden">
-        <img
-          src="/images/polar-bear-snowy-art.webp"
-          alt="Polar bear in snowy landscape artwork"
-          class="w-full h-auto transition-transform duration-300 hover:scale-105"
-          loading="lazy"
-        />
-        <figcaption class="mt-2 text-sm text-gray-500 italic">
-          “Polar Bear in Snow” — Arctic Wildlife Series
-        </figcaption>
+      <figure class="rounded-2xl shadow-lg p-3 bg-white dark:bg-gray-800 transition-transform duration-300 hover:scale-105">
+        <Image src={polarBear} alt="Polar Bear in Snow - Arctic Wildlife Series" width={400} height={300} />
+        <figcaption class="italic text-sm mt-2">"Polar Bear in SnowStorm" - Arctic Wildlife</figcaption>
       </figure>
 
-      <!-- Artwork 4 -->
-      <figure class="rounded-2xl shadow-md overflow-hidden">
-        <img
-          src="/images/bear-head-sketch-frame.webp"
-          alt="Bear head framed pencil sketch"
-          class="w-full h-auto transition-transform duration-300 hover:scale-105"
-          loading="lazy"
-        />
-        <figcaption class="mt-2 text-sm text-gray-500 italic">
-          “Bear Head Study” — Pencil on Paper
-        </figcaption>
+      <figure class="rounded-2xl shadow-lg p-3 bg-white dark:bg-gray-800 transition-transform duration-300 hover:scale-105">
+        <Image src={blackWidow} alt="Black Widow - Insect Portrait Series" width={400} height={300} />
+        <figcaption class="italic text-sm mt-2">"Black Widow" - Insect Portrait Series</figcaption>
       </figure>
-
-      <!-- Artwork 5 -->
-      <figure class="rounded-2xl shadow-md overflow-hidden">
-        <img
-          src="/images/black-widow-spider-art.webp"
-          alt="Black widow spider illustration"
-          class="w-full h-auto transition-transform duration-300 hover:scale-105"
-          loading="lazy"
-        />
-        <figcaption class="mt-2 text-sm text-gray-500 italic">
-          “Black Widow” — Insect Portrait Series
-        </figcaption>
-      </figure>
-    </div>
+    </section>
   </main>
 </Layout>
 
