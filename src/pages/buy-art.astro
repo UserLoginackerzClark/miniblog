@@ -2,41 +2,72 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout 
+<Layout
   title="Buy Art | sandrogia.com"
-  description="Purchase original wildlife and nature artwork by Sandrogia, inspired by bears, spiders, and Arctic landscapes."
+  description="Purchase original wildlife and nature artwork by Sandrogia."
 >
   <main class="px-4 py-10 text-center">
-    <h1 class="text-4xl font-bold mb-6">Buy Art</h1>
+    <h1 class="text-4xl font-bold mb-4">Buy Art</h1>
 
     <p class="text-lg text-gray-700 dark:text-gray-300">
       To purchase artwork, please contact art@sandrogia.com
     </p>
 
-    <!-- Artwork Grid -->
-    <section class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center">
-
-      <figure class="rounded-2xl shadow-lg p-3 bg-white dark:bg-gray-800 transition-transform duration-300 hover:scale-105">
-        <img src="/images/bear-roar-art.webp" alt="Bear Roar - Original wildlife art" width="400" height="300" loading="lazy" />
-        <figcaption class="italic text-sm mt-2">"Bear Roar" - Original wildlife art</figcaption>
+    <div
+      class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center"
+    >
+      <figure class="rounded-2xl shadow-lg p-2 bg-white dark:bg-gray-800">
+        <a href="/images/bear-roar-art.webp" target="_blank">
+          <img
+            src="/images/bear-roar-art.webp"
+            alt="Bear Roar — Original wildlife art"
+            width="400"
+            height="300"
+            class="rounded-lg transition-transform duration-300 hover:scale-105"
+          />
+        </a>
+        <figcaption class="italic text-sm mt-2">“Bear Roar” — Original wildlife art</figcaption>
       </figure>
 
-      <figure class="rounded-2xl shadow-lg p-3 bg-white dark:bg-gray-800 transition-transform duration-300 hover:scale-105">
-        <img src="/images/grizzly-bear-water-falls-art.webp" alt="Grizzly at the Falls - Nature inspired piece" width="400" height="300" loading="lazy" />
-        <figcaption class="italic text-sm mt-2">"Grizzly at the Falls" - Nature inspired piece</figcaption>
+      <figure class="rounded-2xl shadow-lg p-2 bg-white dark:bg-gray-800">
+        <a href="/images/grizzly-bear-water-falls-art.webp" target="_blank">
+          <img
+            src="/images/grizzly-bear-water-falls-art.webp"
+            alt="Grizzly at the Falls — Nature inspired piece"
+            width="400"
+            height="300"
+            class="rounded-lg transition-transform duration-300 hover:scale-105"
+          />
+        </a>
+        <figcaption class="italic text-sm mt-2">“Grizzly at the Falls” — Nature inspired piece</figcaption>
       </figure>
 
-      <figure class="rounded-2xl shadow-lg p-3 bg-white dark:bg-gray-800 transition-transform duration-300 hover:scale-105">
-        <img src="/images/polar-bear-snowy-art.webp" alt="Polar Bear in Snow - Arctic Wildlife Series" width="400" height="300" loading="lazy" />
-        <figcaption class="italic text-sm mt-2">"Polar Bear in Snow" - Arctic Wildlife Series</figcaption>
+      <figure class="rounded-2xl shadow-lg p-2 bg-white dark:bg-gray-800">
+        <a href="/images/polar-bear-snowy-art.webp" target="_blank">
+          <img
+            src="/images/polar-bear-snowy-art.webp"
+            alt="Polar Bear in Snow — Arctic Wildlife Series"
+            width="400"
+            height="300"
+            class="rounded-lg transition-transform duration-300 hover:scale-105"
+          />
+        </a>
+        <figcaption class="italic text-sm mt-2">“Polar Bear in Snow” — Arctic Wildlife Series</figcaption>
       </figure>
 
-      <figure class="rounded-2xl shadow-lg p-3 bg-white dark:bg-gray-800 transition-transform duration-300 hover:scale-105">
-        <img src="/images/black-widow-spider-art.webp" alt="Black Widow - Insect Portrait Series" width="400" height="300" loading="lazy" />
-        <figcaption class="italic text-sm mt-2">"Black Widow" - Insect Portrait Series</figcaption>
+      <figure class="rounded-2xl shadow-lg p-2 bg-white dark:bg-gray-800">
+        <a href="/images/black-widow-spider-art.webp" target="_blank">
+          <img
+            src="/images/black-widow-spider-art.webp"
+            alt="Black Widow — Insect Portrait Series"
+            width="400"
+            height="300"
+            class="rounded-lg transition-transform duration-300 hover:scale-105"
+          />
+        </a>
+        <figcaption class="italic text-sm mt-2">“Black Widow” — Insect Portrait Series</figcaption>
       </figure>
-
-    </section>
+    </div>
   </main>
 </Layout>
 
