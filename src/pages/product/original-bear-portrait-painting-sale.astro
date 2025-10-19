@@ -1,0 +1,24 @@
+---
+import ProductPage from "../../components/ProductPage.astro";
+
+const product = {
+  name: "Original Bear Portrait Painting – Acrylic on Canvas",
+  description:
+    "“Anger Management” is an original fine art painting capturing the raw, primal energy of a roaring bear against a cosmic backdrop. Hand-painted with acrylics on wood panel, this one-of-a-kind wildlife painting blends realism with surreal background colors. Perfect for collectors of nature, wildlife, or contemporary art. Signed by the artist Sandro Gia.",
+  image: ["/images/bear-roar-art.webp"],
+  price: "250.00",
+  salePrice: "175.00",
+  currency: "USD",
+  sku: "gla_440",
+  availability: "https://schema.org/InStock",
+  condition: "https://schema.org/NewCondition",
+  brand: "Sandrogia Art",
+  size: "14 × 16 in",
+  material: "Acrylic on Wood Panel",
+  email: "art@sandrogia.com",
+  url: "https://sandrogia.com/product/original-bear-portrait-painting-sale/",
+};
+---
+
+<ProductPage {...product} />
+

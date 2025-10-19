@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const {
+  name,
+  description,
+  image,
+  price,
+  salePrice,
+  currency = "USD",
+  sku,
+  availability = "https://schema.org/InStock",
+  condition = "https://schema.org/NewCondition",
+  brand = "Sandrogia Art",
+  size,
+  material,
+  email = "art@sandrogia.com",
+  url,
+} = Astro.props;
+---
+
+<Layout title={name} description={description}>
+  <article class="mx-auto max-w-3xl p-6">
+    <h1 class="text-3xl font-bold mb-4">{name}</h1>
+
+    <div class="flex flex-col gap-4">
+      {Array.isArray(image)
+        ? image.map((img) => (
+            <img src={img} alt={name} class="rounded-2xl shadow" loading="lazy" />
+          ))
+        : <img src={image} alt={name} class="rounded-2xl shadow" loading="lazy" />}
+    </div>
+
+    <p class="mt-4 text-lg">{description}</p>
+
+    <p class="font-semibold text-xl mt-6">
+      {salePrice ? (
+        <>
+          <span class="line-through text-gray-500">${price}</span>
+          <span class="ml-2 text-green-700">${salePrice} {currency}</span>
+        </>
+      ) : (
+        <span class="text-green-700">${price} {currency}</span>
+      )}
+    </p>
+
+    {(size || material) && (
+      <p class="mt-2 text-sm text-gray-600">
+        {size && <>Size: {size}</>} {size && material && " | "}
+        {material && <>Material: {material}</>}
+      </p>
+    )}
+
+    <a
+      href={`mailto:${email}?subject=Purchase%20Request%20-%20${encodeURIComponent(name)}`}
+      class="inline-block bg-black text-white px-4 py-2 mt-6 rounded-xl"
+    >
+      Inquire or Purchase
+    </a>
+  </article>
+
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json" is:inline>
+    {JSON.stringify({
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      name,
+      image: Array.isArray(image)
+        ? image.map((img) => `https://sandrogia.com${img}`)
+        : [`https://sandrogia.com${image}`],
+      description,
+      brand: { "@type": "Brand", name: brand },
+      sku,
+      offers: {
+        "@type": "Offer",
+        url,
+        priceCurrency: currency,
+        price: salePrice || price,
+        priceValidUntil: "2026-12-31",
+        itemCondition: condition,
+        availability,
+      },
+    })}
+  </script>
+</Layout>
+
