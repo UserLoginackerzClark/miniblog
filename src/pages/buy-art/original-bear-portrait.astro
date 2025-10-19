@@ -1,12 +1,11 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 
 const product = {
   name: "Original Bear Portrait Painting – Acrylic on Canvas",
-  description: "“Anger Management” is an original fine art painting capturing the raw, primal energy of a roaring bear against a cosmic backdrop. Hand-painted in acrylics on wood panel, this one-of-a-kind wildlife artwork blends realism with a surreal background. Perfect for collectors of nature, wildlife, or contemporary art. Signed by the artist Sandro Gia.",
-  image: [
-    "/images/bear-roar-art.webp"
-  ],
+  description:
+    "“Anger Management” is an original fine art painting capturing the raw, primal energy of a roaring bear against a cosmic backdrop. Hand-painted with acrylics on wood panel, this one-of-a-kind wildlife artwork blends realism with surreal color bursts. Perfect for collectors of nature, wildlife, or contemporary art. Signed by the artist Sandro Gia.",
+  image: ["/images/Bear-Roar-Art.webp"],
   price: "250.00",
   salePrice: "175.00",
   currency: "USD",
@@ -16,17 +15,22 @@ const product = {
   brand: "Sandrogia Art",
   url: "https://sandrogia.com/buy-art/original-bear-portrait",
   size: "14 × 16 in",
-  material: "Acrylic on Wood Panel"
+  material: "Acrylic on Wood Panel",
 };
 ---
 
-<BaseLayout title={product.name} description={product.description}>
+<Layout title={product.name} description={product.description}>
   <section class="mx-auto max-w-3xl p-6">
     <h1 class="text-3xl font-bold mb-4">{product.name}</h1>
 
     <div class="flex flex-col gap-4">
       {product.image.map((img) => (
-        <img src={img} alt={product.name} class="rounded-2xl shadow" loading="lazy" />
+        <img
+          src={img}
+          alt={product.name}
+          class="rounded-2xl shadow"
+          loading="lazy"
+        />
       ))}
     </div>
 
@@ -50,7 +54,7 @@ const product = {
   </section>
 
   <!-- SEO + Google Merchant structured data -->
-  <script type="application/ld+json">
+  <script type="application/ld+json" is:inline>
     {JSON.stringify({
       "@context": "https://schema.org/",
       "@type": "Product",
@@ -66,9 +70,9 @@ const product = {
         price: product.salePrice,
         priceValidUntil: "2026-12-31",
         itemCondition: product.condition,
-        availability: product.availability
-      }
+        availability: product.availability,
+      },
     })}
   </script>
-</BaseLayout>
+</Layout>
 
