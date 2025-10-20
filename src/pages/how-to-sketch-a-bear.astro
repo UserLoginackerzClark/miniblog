@@ -1,11 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import bearRoar from "/images/bear-roar-art.webp";
-import bearWalk1 from "/images/bear-sketch-walk.webp";
-import bearWalk2 from "/images/bear-sketch-walk2.webp";
-import bearWalk3 from "/images/bear-sketch-walk3.webp";
-import bearWalk4 from "/images/bear-sketch-walk4.webp";
+
+// ✅ Use local image assets (move them to src/assets/)
+import bearRoar from "../assets/bear-roar-art.webp";
+import bearWalk1 from "../assets/bear-sketch-walk.webp";
+import bearWalk2 from "../assets/bear-sketch-walk2.webp";
+import bearWalk3 from "../assets/bear-sketch-walk3.webp";
+import bearWalk4 from "../assets/bear-sketch-walk4.webp";
 ---
 
 <Layout 
@@ -16,13 +18,14 @@ import bearWalk4 from "/images/bear-sketch-walk4.webp";
     <h1 class="text-3xl font-bold mb-8">How to Sketch a Bear</h1>
 
     <p class="mb-6">
-      Rendering a bear can be challenging for both beginners and advanced artists...
+      Rendering a bear can be challenging for both beginners and advanced artists. This is especially true when using a photo reference instead of studying real animals in the wild. The issue with a flat photo reference is that the final drawing often lacks depth and anatomical accuracy. Don’t worry — this guide will help you draw realistic bears with confidence.
     </p>
 
+    <!-- 🎨 Main artwork image -->
     <figure class="mx-auto my-16 text-center">
       <Image
         src={bearRoar}
-        alt="Grizzly Bear Roaring Portrait, titled Anger Management"
+        alt="Grizzly Bear Roaring Portrait titled Anger Management"
         widths={[400, 800, 1200]}
         sizes="(max-width: 600px) 400px, 800px"
         loading="lazy"
@@ -34,30 +37,74 @@ import bearWalk4 from "/images/bear-sketch-walk4.webp";
     </figure>
 
     <h2 class="text-2xl font-semibold mt-10">Step 1: Start with Simple Shapes</h2>
-    <p>...</p>
+    <p>
+      Start your sketch using a regular pencil and paper. Keep it simple — use circles and ovals for the head and body, and light lines for legs and shoulders. Don’t focus on fur or shading yet; just define proportions and posture. Reference several photos to understand anatomy from multiple angles.
+    </p>
 
     <figure class="mx-auto my-8 text-center">
-      <Image src={bearWalk1} alt="Bear walking sketch on paper" widths={[400,800,1200]} loading="lazy" class="rounded-xl shadow-lg mx-auto" />
-      <figcaption class="mt-2 text-sm text-gray-500 dark:text-zinc-400">Bear walking sketch on paper</figcaption>
+      <Image
+        src={bearWalk1}
+        alt="Bear walking sketch on paper"
+        widths={[400, 800, 1200]}
+        loading="lazy"
+        class="rounded-xl shadow-lg mx-auto"
+      />
+      <figcaption class="mt-2 text-sm text-gray-500 dark:text-zinc-400">
+        Bear walking sketch on paper
+      </figcaption>
     </figure>
 
     <h2 class="text-2xl font-semibold mt-10">Step 2: Define the Bear’s Anatomy</h2>
-    <p>...</p>
+    <p>
+      Lightly outline muscle groups and joints. Notice how the shoulders and hips align when the bear walks. Keep lines loose and fluid — bears have strong necks and thick torsos. Don’t worry about perfection yet; focus on understanding structure.
+    </p>
 
     <figure class="mx-auto my-8 text-center">
-      <Image src={bearWalk2} alt="Bear sketch structure outlines" widths={[400,800,1200]} loading="lazy" class="rounded-xl shadow-lg mx-auto" />
-      <figcaption class="mt-2 text-sm text-gray-500 dark:text-zinc-400">Bear sketch basic structure outlines</figcaption>
+      <Image
+        src={bearWalk2}
+        alt="Bear sketch basic structure outlines"
+        widths={[400, 800, 1200]}
+        loading="lazy"
+        class="rounded-xl shadow-lg mx-auto"
+      />
+      <figcaption class="mt-2 text-sm text-gray-500 dark:text-zinc-400">
+        Bear sketch basic structure outlines
+      </figcaption>
     </figure>
 
     <h2 class="text-2xl font-semibold mt-10">Step 3: Add Fur and Details</h2>
-    <p>...</p>
+    <p>
+      Once the form feels correct, use short strokes to represent fur. Apply longer, darker lines along the back and limbs. Keep the strokes in the direction of fur growth for realism.
+    </p>
 
-    <Image src={bearWalk3} alt="Bear sketch fur details" widths={[400,800,1200]} loading="lazy" class="rounded-xl shadow-lg mx-auto" />
+    <Image
+      src={bearWalk3}
+      alt="Bear sketch with fur texture details"
+      widths={[400, 800, 1200]}
+      loading="lazy"
+      class="rounded-xl shadow-lg mx-auto my-8"
+    />
 
     <h2 class="text-2xl font-semibold mt-10">Step 4: Refine and Shade</h2>
-    <p>...</p>
+    <p>
+      Add shading with the light source in mind (for example, top-left). Use gradual tones to define muscles and mass. Adding ground shadows and grass details near the paws helps your drawing feel grounded and natural.
+    </p>
 
-    <Image src={bearWalk4} alt="Completed bear sketch shaded" widths={[400,800,1200]} loading="lazy" class="rounded-xl shadow-lg mx-auto" />
+    <Image
+      src={bearWalk4}
+      alt="Completed bear sketch with shading and ground details"
+      widths={[400, 800, 1200]}
+      loading="lazy"
+      class="rounded-xl shadow-lg mx-auto my-8"
+    />
+
+    <h2 class="text-2xl font-semibold mt-10">Art Tips for Realism</h2>
+    <ul class="text-left mx-auto max-w-xl list-disc list-inside">
+      <li>Watch nature videos to observe how bears move.</li>
+      <li>Keep your early lines loose; tighten them only when proportions look right.</li>
+      <li>Use a mirror to check symmetry.</li>
+      <li>Use cross-hatching or blending to shade around the neck and under the belly.</li>
+    </ul>
 
     <!-- 🎥 Vimeo video -->
     <div class="my-12 flex justify-center">
@@ -65,7 +112,6 @@ import bearWalk4 from "/images/bear-sketch-walk4.webp";
         <iframe
           src="https://player.vimeo.com/video/1116494093?h=ip&fe=ec&muted=1"
           title="Anger Management – Bear Portrait Time-Lapse"
-          frameborder="0"
           allow="autoplay; fullscreen; picture-in-picture"
           allowfullscreen
           class="w-full h-full rounded-2xl shadow-lg"
@@ -74,7 +120,13 @@ import bearWalk4 from "/images/bear-sketch-walk4.webp";
     </div>
 
     <h2 class="text-2xl font-semibold mt-10">Conclusion</h2>
-    <p>Learning how to sketch a bear trains your eye for anatomy, rhythm, and texture...</p>
+    <p>
+      Learning how to sketch a bear trains your eye for anatomy, rhythm, and texture. Whether you’re practicing wildlife art or improving your observation skills, this process will bring life and energy to your drawings.
+    </p>
+
+    <p class="italic mt-6">
+      Keep practicing — draw your pet, or go outside and sketch a bird or squirrel. The key is to observe and enjoy the process.
+    </p>
   </main>
 </Layout>
 

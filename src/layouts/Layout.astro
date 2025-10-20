@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
 import { cn } from "../lib/utils";
 import "../styles/global.css";
@@ -28,8 +27,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- Canonical & fonts -->
     <link rel="canonical" href={canonicalURL} />
-
     <link
       rel="preload"
       href="/fonts/geist-variable.woff2"
@@ -45,23 +44,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       crossorigin
     />
 
+    <!-- SEO Meta -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
 
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.url)} />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={Astro.url} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, Astro.url)} />
-
-    <ViewTransitions />
 
     <!-- Microsoft Clarity -->
     <script is:inline>
