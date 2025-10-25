@@ -6,6 +6,15 @@ import Layout from "../layouts/Layout.astro";
   title="Home | sandrogia.com" 
   description="Original artwork and nature-inspired creations by Sandrogia."
 >
+  <!-- 👇 Preload the main hero image to improve Largest Contentful Paint -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/owl-great-horned-art.webp"
+    type="image/webp"
+    fetchpriority="high"
+  />
+
   <main class="px-4 py-10 text-center">
     <h1 class="text-4xl font-bold mb-4">Sandrogia</h1>
 
@@ -23,23 +32,31 @@ import Layout from "../layouts/Layout.astro";
       <h2 class="text-2xl font-semibold mb-8">Featured Artwork</h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+        <!-- 1. Great Horned Owl -->
         <figure>
           <img
             src="/images/owl-great-horned-art.webp"
             alt="Great Horned Owl wildlife art painting"
             class="rounded-2xl shadow-lg w-full h-auto"
-            loading="lazy"
+            width="800"
+            height="600"
+            loading="eager"
+            fetchpriority="high"
           />
           <figcaption class="mt-2 text-sm text-gray-500 italic">
             “Great Horned Owl” Wildlife Artwork
           </figcaption>
         </figure>
 
+        <!-- 2. Blue Whale Dive -->
         <figure>
           <img
             src="/images/blue-whale-dive-art.webp"
-            alt="Blue Whale dive ocean painting"
+            alt="Blue Whale Dive ocean painting"
             class="rounded-2xl shadow-lg w-full h-auto"
+            width="800"
+            height="600"
             loading="lazy"
           />
           <figcaption class="mt-2 text-sm text-gray-500 italic">
@@ -47,29 +64,36 @@ import Layout from "../layouts/Layout.astro";
           </figcaption>
         </figure>
 
+        <!-- 3. Puffin Bird Portrait -->
         <figure>
           <img
             src="/images/puffin-bird-portrait.webp"
-            alt="Puffin bird portrait painting"
+            alt="Puffin Bird Portrait wildlife art"
             class="rounded-2xl shadow-lg w-full h-auto"
+            width="800"
+            height="600"
             loading="lazy"
           />
           <figcaption class="mt-2 text-sm text-gray-500 italic">
-            “Puffin Bird” Portrait
+            “Puffin Bird Portrait” Wildlife Artwork
           </figcaption>
         </figure>
 
+        <!-- 4. Black Widow Spider -->
         <figure>
           <img
             src="/images/black-widow-spider-art.webp"
-            alt="Black Widow Spider insect artwork illustration"
+            alt="Black Widow Spider nature artwork"
             class="rounded-2xl shadow-lg w-full h-auto"
+            width="800"
+            height="600"
             loading="lazy"
           />
           <figcaption class="mt-2 text-sm text-gray-500 italic">
-            “Black Widow Spider” Insect Artwork
+            “Black Widow Spider” Nature Artwork
           </figcaption>
         </figure>
+
       </div>
     </section>
   </main>

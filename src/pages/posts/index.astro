@@ -1,28 +1,45 @@
 ---
 import { getCollection } from "astro:content";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
-import Layout from "../../layouts/Layout.astro";
 
-const collection = await getCollection("posts");
-const posts = collection.sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+const posts = (await getCollection("posts")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <main>
-    <ul class="flex flex-col gap-1.5">
-      {posts.map((post) => (
-        <li>
-          <a
-            href="/how-to-sketch-a-bear"
-            class="group-hover:underline gap-3"
-          >
-            <span>How to Sketch a Bear</span>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </main>
-</Layout>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Posts | Miniblog</title>
+  </head>
+
+  <body class="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50">
+    <main class="mx-auto max-w-3xl p-8">
+      <!-- Navigation Links -->
+      <nav class="flex justify-center space-x-6 mb-8 text-sm font-medium">
+        <a href="/" class="hover:underline text-blue-700 dark:text-blue-400">home</a>
+        <a href="/posts" class="hover:underline text-blue-700 dark:text-blue-400">posts</a>
+        <a href="/buy-art" class="hover:underline text-blue-700 dark:text-blue-400">buy art</a>
+      </nav>
+
+      <h1 class="mb-6 text-3xl font-bold text-center">Posts</h1>
+
+      <ul class="space-y-4">
+        {posts.map((post) => (
+          <li class="border-b border-zinc-200 dark:border-zinc-700 pb-3">
+            <a
+              href={`/posts/${post.slug}`}
+              class="text-lg font-medium text-blue-700 hover:underline dark:text-blue-400"
+            >
+              {post.data.title}
+            </a>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400">
+              {post.data.description}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </main>
+  </body>
+</html>
 
